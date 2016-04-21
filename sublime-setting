@@ -1,0 +1,22 @@
+{
+	"file_exclude_patterns":
+	[
+		"*.meta",
+		"*.sln",
+		"*.csproj",
+		"*.userprefs"
+	],
+	"font_face": "Courier New",
+	"font_options":
+	[
+	],
+	"font_size": 13.5,
+	"line_padding_bottom": 1,
+	"line_padding_top": 1,
+	"save_on_focus_lost": true,
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true,
+	"word_wrap": true
+}
