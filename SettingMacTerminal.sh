@@ -7,3 +7,4 @@ echo 'fi' >> ~/.bash_profile
 echo 'export CLICOLOR="true"' >> ~/.bashrc
 echo 'export LSCOLORS="gxfxcxdxcxegedabagacad"' >> ~/.bashrc
 echo 'alias ll="ls -al"' >> ~/.bashrc
+source .bash_profile

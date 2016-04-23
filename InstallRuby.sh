@@ -7,6 +7,7 @@ echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 echo 'export RBENV_ROOT=/usr/local/var/rbenv' >> ~/.bashrc
 echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bashrc
+source .bash_profile
 
 # list available Ruby version
 # rbenv install -l
