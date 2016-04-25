@@ -1,0 +1,47 @@
+%YAML1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+# Saved in ../Sublime Text 3/Packages/User
+name: PowerLanguage
+scope: source.powerlanguage
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '"'
+      scope: punctuation.definition.string.begin.powerlanguage
+      push: double_quoted_string
+
+    # Comments
+    - match: '//'
+      scope: punctuation.definition.comment.powerlanguage
+      push: line_comment
+    - match: '{'
+      scope: punctuation.definition.comment.powerlanguage
+      push: scope_comment
+
+    # Keywords
+    - match: '\b(if|else|then|for|while|switch|case|begin|end|var)\b'
+      scope: keyword.control.powerlanguage
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.powerlanguage
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.powerlanguage
+    - match: '\\.'
+      scope: constant.character.escape.powerlanguage
+    - match: '"'
+      scope: punctuation.definition.string.end.powerlanguage
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.powerlanguage
+    - match: $
+      pop: true
+
+  scope_comment:
+    - meta_scope: comment.line.powerlanguage
+    - match: '}'
+      pop: true
