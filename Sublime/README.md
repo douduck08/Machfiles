@@ -3,8 +3,7 @@
 2. Browse up a folder and then into the Installed **Packages/ folder**
 3. Download [Package Control.sublime-package](https://packagecontrol.io/Package%20Control.sublime-package) and copy it into the Installed Packages/ directory
 4. Restart Sublime Text
-
-- Ref: <https://packagecontrol.io/installation>
+5. Ref: <https://packagecontrol.io/installation>
 
 ### Package Control Usage
 1. **Command+Shift+p** in Sublime
