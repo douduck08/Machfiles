@@ -8,8 +8,9 @@ echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"' >> ~/.bashrc
 source .bash_profile
 
 # list available node.js version
-# nvm ls-remote
+nvm ls-remote
 
 # install node.js
-nvm install 5.11.0
-nvm alias default 5.11.0
+read -p "Enter your wanted version: " version
+nvm install $version
+nvm alias default $version

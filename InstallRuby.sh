@@ -10,9 +10,10 @@ echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bashrc
 source .bash_profile
 
 # list available Ruby version
-# rbenv install -l
+rbenv install -l
 
 # install Ruby
-rbenv install 2.2.3
-rbenv global 2.2.3
+read -p "Enter your wanted version: " version
+rbenv install $version
+rbenv global $version
 rbenv rehash
