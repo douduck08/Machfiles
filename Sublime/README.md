@@ -13,3 +13,6 @@
 - About unity
   - Unity3D: syntax highlighting of Unity3D
   - Unity Completions / Unity Completions Light: auto-completions for Unity classes
+- About markdown
+  - Markdown​ Highlighting: Markdown syntax highlighting
+  - Markdown Preview: cmd + b to build html preview
