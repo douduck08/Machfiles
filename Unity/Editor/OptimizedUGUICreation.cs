@@ -8,7 +8,8 @@ public class OptimizeEditor {
 	static void CreatImage(MenuCommand menuCommand)
 	{
 		EditorApplication.ExecuteMenuItem("GameObject/UI/Image");
-		GameObject go = (GameObject)Selection.activeObject;
+		GameObject go = Selection.activeGameObject;
+		GameObjectUtility.SetParentAndAlign(go, menuCommand.context as GameObject);
 		go.GetComponent<Image>().raycastTarget = false;
 	}
 
@@ -16,7 +17,8 @@ public class OptimizeEditor {
 	static void CreatText(MenuCommand menuCommand)
 	{
 		EditorApplication.ExecuteMenuItem("GameObject/UI/Text");
-		GameObject go = (GameObject)Selection.activeObject;
+		GameObject go = Selection.activeGameObject;
+		GameObjectUtility.SetParentAndAlign(go, menuCommand.context as GameObject);
 		go.GetComponent<Text>().raycastTarget = false;
 	}
 }

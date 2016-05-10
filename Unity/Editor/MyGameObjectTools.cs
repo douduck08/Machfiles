@@ -1,34 +1,45 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEditor;
 
-public class MyGameObjectTools : EditorWindow 
-{
-	static int go_count = 0, components_count = 0, missing_count = 0;
+public class MyGameObjectTools : EditorWindow {
+	
+	private bool bFoldSetActive, bFoldFindMissing;
+	private int go_count = 0, components_count = 0, missing_count = 0;
 	
 	[MenuItem("Window/My GameObject Tools")]
 	public static void ShowWindow() {
 		EditorWindow.GetWindow(typeof(MyGameObjectTools), false, "My Tools");
 	}
 	
-	public void OnGUI()
-	{
-		if (GUILayout.Button("Find Missing Scripts in selected GameObjects")) {
-			FindInSelected();
+	public void OnGUI() {
+		bFoldSetActive = EditorGUILayout.Foldout(bFoldSetActive, "Set Active to Selection");
+		if (bFoldSetActive) {
+			EditorGUILayout.BeginHorizontal();
+			if (GUILayout.Button("Active Selection")) {
+				SetActiveInSelected(true);
+			}
+			if (GUILayout.Button("Inactive Selection")) {
+				SetActiveInSelected(false);
+			}
+			EditorGUILayout.EndHorizontal();
 		}
-		EditorGUILayout.LabelField ("Searched GameObjects:", go_count.ToString());
-		EditorGUILayout.LabelField ("Found Components:", components_count.ToString());
-		EditorGUILayout.LabelField ("Found Missing:", missing_count.ToString());
 
-		if (GUILayout.Button("Active Selection")) {
-			SetActiveInSelected(true);
-		}
-
-		if (GUILayout.Button("Inactive Selection")) {
-			SetActiveInSelected(false);
+	 	bFoldFindMissing = EditorGUILayout.Foldout(bFoldFindMissing, "Find Missing Scripts");
+		if (bFoldFindMissing) {
+			EditorGUILayout.BeginHorizontal();
+			if (GUILayout.Button("Find Missing Scripts", GUILayout.ExpandWidth(false), GUILayout.Height(50))) {
+				FindInSelected();
+			}
+			EditorGUILayout.BeginVertical();
+			EditorGUILayout.LabelField("Searched GameObjects:", go_count.ToString());
+			EditorGUILayout.LabelField("Found Components:", components_count.ToString());
+			EditorGUILayout.LabelField("Found Missing:", missing_count.ToString());
+			EditorGUILayout.EndVertical();
+			EditorGUILayout.EndHorizontal();
 		}
 	}
 
-	private static void FindInSelected() {
+	private void FindInSelected() {
 		GameObject[] go = Selection.gameObjects;
 		go_count = 0;
 		components_count = 0;
@@ -38,7 +49,7 @@ public class MyGameObjectTools : EditorWindow
 		}
 	}
 	
-	private static void FindInGO(GameObject g) {
+	private void FindInGO(GameObject g) {
 		go_count++;
 		Component[] components = g.GetComponents<Component>();
 		for (int i = 0; i < components.Length; i++) {
@@ -60,14 +71,14 @@ public class MyGameObjectTools : EditorWindow
 		}
 	}
 
-	private static void SetActiveInSelected(bool active) {
+	private void SetActiveInSelected(bool active) {
 		GameObject[] go = Selection.gameObjects;
 		foreach (GameObject g in go) {
 			SetActiveInGO(g, active);
 		}
 	}
 
-	private static void SetActiveInGO(GameObject g, bool active) {
+	private void SetActiveInGO(GameObject g, bool active) {
 		foreach (Transform childT in g.transform) {
 			SetActiveInGO(childT.gameObject, active);
 		}
