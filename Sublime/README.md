@@ -16,3 +16,6 @@
 - About markdown
   - Markdown​ Highlighting: Markdown syntax highlighting
   - Markdown Preview: cmd + b to build html preview
+- Others
+  - ConvertToUTF8
+  - Emmet
