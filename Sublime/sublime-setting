@@ -1,16 +1,29 @@
 {
+	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"folder_exclude_patterns":
+	[
+		".git",
+		"Library",
+		"ProjectSetting",
+		"Temp"
+	],
 	"file_exclude_patterns":
 	[
 		"*.meta",
 		"*.sln",
 		"*.csproj",
-		"*.userprefs"
+		"*.userprefs",
+		"/Library/*"
 	],
 	"font_face": "Courier New",
 	"font_options":
 	[
 	],
 	"font_size": 13.5,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
 	"line_padding_bottom": 1,
 	"line_padding_top": 1,
 	"save_on_focus_lost": true,
