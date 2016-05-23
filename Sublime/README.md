@@ -17,5 +17,6 @@
   - Markdown​ Highlighting: Markdown syntax highlighting
   - Markdown Preview: cmd + b to build html preview
 - Others
+  - Git Config
   - ConvertToUTF8
   - Emmet
