@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 
 public static class Debugger {
-
 	public static bool DebugMode = false;
 
 	public static void Log(object message) {
@@ -10,7 +9,7 @@ public static class Debugger {
 			Debug.Log(message);
 		}
 	}
-	
+
 	public static void LogWarning(object message) {
 		if (DebugMode) {
 			Debug.LogWarning(message);
