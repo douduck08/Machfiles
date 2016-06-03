@@ -6,7 +6,9 @@ public class LogDisplay : MonoBehaviour {
 	public int FontSize = 24;
 
 	private string myLog = "";
-	private GUIStyle style;
+	private int btnSize;
+	private GUIStyle btnStyle = null;
+	private GUIStyle labelStyle = null;
 
 	void OnEnable () {
 		Application.logMessageReceived += newLog;
@@ -17,30 +19,39 @@ public class LogDisplay : MonoBehaviour {
 		Application.logMessageReceived -= newLog;
 	}
 
-	void Awake() {
-		style = new GUIStyle();
-		style.alignment = TextAnchor.UpperLeft;
-		style.fontSize = FontSize;
-		style.normal.textColor = new Color (0.7f, 0.7f, 0.7f, 1.0f);
+	void InitGUI() {
+		if (btnStyle == null) {
+			int w = Screen.width, h = Screen.height;
+			btnSize = (int)Mathf.Min(w, h) / 10;
+			btnStyle = new GUIStyle (GUI.skin.button);
+			btnStyle.fontSize = btnSize / 2;
+		}
+		if (labelStyle == null) {
+			labelStyle = new GUIStyle ();
+			labelStyle.alignment = TextAnchor.UpperLeft;
+			labelStyle.fontSize = FontSize;
+			labelStyle.normal.textColor = new Color (0.7f, 0.7f, 0.7f, 1.0f);
+		}
 	}
 
 	void OnGUI () {
+		InitGUI();
+		int w = Screen.width, h = Screen.height;
 		if (isOpen) {
-			if (GUI.Button(new Rect(10, 10, 20, 20), "x")) {
+			if (GUI.Button(new Rect(10, 10, btnSize, btnSize), "x", btnStyle)) {
 				isOpen = false;
 			}
-			if (GUI.Button(new Rect(60, 10, 20, 20), "<")) {
-				FontSize -= 2;
-				style.fontSize = FontSize;
+			if (GUI.Button(new Rect(20 + btnSize , 10, btnSize, btnSize), "<", btnStyle)) {
+				FontSize -= 4;
+				labelStyle.fontSize = FontSize;
 			}
-			if (GUI.Button(new Rect(110, 10, 20, 20), ">")) {
-				FontSize += 2;
-				style.fontSize = FontSize;
+			if (GUI.Button(new Rect(30 + btnSize * 2, 10, btnSize, btnSize), ">", btnStyle)) {
+				FontSize += 4;
+				labelStyle.fontSize = FontSize;
 			}
-			int w = Screen.width, h = Screen.height;
-			GUI.Label(new Rect(10, 30, w - 20, h - 40), myLog, style);
+			GUI.Label(new Rect(10, 10 + btnSize, w - 20, h - 10 - btnSize), myLog, labelStyle);
 		} else {
-			if (GUI.Button(new Rect(10, 10, 20, 20), "o")) {
+			if (GUI.Button(new Rect(10, 10, btnSize, btnSize), "o", btnStyle)) {
 				isOpen = true;
 			}
 		}
