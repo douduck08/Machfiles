@@ -10,14 +10,23 @@ public class UIManageTool : EditorWindow {
 
 	[MenuItem("Window/My UI ManageTool")]
 	public static void ShowWindow() {
-		EditorWindow.GetWindow(typeof(UIManageTool), false, "UI Manage Tool");
+		EditorWindow.GetWindow(typeof(UIManageTool), false, "UI Manager");
+	}
+
+	public void OnFocus() {
+		if (m_canvas == null) {
+			GameObject go_ = GameObject.Find("Canvas");
+			if (go_ != null) {
+				m_canvas = go_.GetComponent<Canvas>();
+			}
+		}
+		if (m_canvas != null) {
+			Refresh();
+		}
 	}
 
 	public void OnGUI() {
 		m_canvas = (Canvas)EditorGUILayout.ObjectField("Root Canvas", m_canvas, typeof(Canvas), true);
-		if (GUILayout.Button("Refresh")) {
-			Refresh();
-		}
 
 		if (m_UIObjects != null && m_UIObjectsActive != null) {
 			for (int i = 0; i < m_UIObjects.Length; i++) {
@@ -39,6 +48,10 @@ public class UIManageTool : EditorWindow {
 			}
 			EditorGUILayout.EndHorizontal();
 		}
+
+		if (GUILayout.Button("Refresh")) {
+			Refresh();
+		}
 	}
 
 	private void Refresh() {
@@ -51,7 +64,7 @@ public class UIManageTool : EditorWindow {
 				m_UIObjectsActive [i] = childT.gameObject.activeSelf;
 				i++;
 			}
-		} else {
+		} else {
 			m_UIObjects = null;
 			m_UIObjectsActive = null;
 		}
