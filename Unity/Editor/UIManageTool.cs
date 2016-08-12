@@ -8,7 +8,7 @@ public class UIManageTool : EditorWindow {
 	private GameObject[] m_UIObjects = null;
 	private bool[] m_UIObjectsActive = null;
 
-	[MenuItem("Window/My UI ManageTool")]
+	[MenuItem("Window/My Tools/UI ManageTool")]
 	public static void ShowWindow() {
 		EditorWindow.GetWindow(typeof(UIManageTool), false, "UI Manager");
 	}

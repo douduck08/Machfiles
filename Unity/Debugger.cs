@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public static class Debugger {
@@ -22,3 +22,4 @@ public static class Debugger {
 		}
 	}
 }
+

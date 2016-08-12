@@ -6,7 +6,7 @@ public class LogDisplay : MonoBehaviour {
 	public int FontSize = 24;
 
 	private string myLog = "";
-	private int btnSize;
+	private int btnSize = 30;
 	private GUIStyle btnStyle = null;
 	private GUIStyle labelStyle = null;
 
@@ -22,7 +22,6 @@ public class LogDisplay : MonoBehaviour {
 	void InitGUI() {
 		if (btnStyle == null) {
 			int w = Screen.width, h = Screen.height;
-			btnSize = (int)Mathf.Min(w, h) / 10;
 			btnStyle = new GUIStyle (GUI.skin.button);
 			btnStyle.fontSize = btnSize / 2;
 		}
@@ -49,7 +48,7 @@ public class LogDisplay : MonoBehaviour {
 				FontSize += 4;
 				labelStyle.fontSize = FontSize;
 			}
-			GUI.Label(new Rect(10, 10 + btnSize, w - 20, h - 10 - btnSize), myLog, labelStyle);
+			GUI.TextArea(new Rect(10, 10 + btnSize, Screen.width - 20, Screen.height - 20 - btnSize), myLog, labelStyle);
 		} else {
 			if (GUI.Button(new Rect(10, 10, btnSize, btnSize), "o", btnStyle)) {
 				isOpen = true;
