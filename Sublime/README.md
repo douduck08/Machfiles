@@ -16,7 +16,9 @@
 - About markdown
   - Markdown​ Highlighting: Markdown syntax highlighting
   - Markdown Preview: cmd + b to build html preview
-- Others
-  - Git Config
+- About web development
+  - Babel: syntax for React jsx
   - ConvertToUTF8
   - Emmet
+- Others
+  - Git Config
