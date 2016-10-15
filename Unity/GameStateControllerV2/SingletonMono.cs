@@ -3,8 +3,6 @@ using System.Collections;
 
 namespace DouduckGame {
 	public class SingletonMono : MonoBehaviour {
-		public delegate IEnumerator CoroutineDelegate();
-
 		// *** Singleton object ***
 		private static GameObject m_oContainer = null;
 		public  static GameObject Container {
@@ -26,9 +24,5 @@ namespace DouduckGame {
 			}
 		}
 		private SingletonMono() {}
-
-		public void RunCoroutine(CoroutineDelegate dCoroutine) {
-			StartCoroutine(dCoroutine());
-		}
 	}
 }

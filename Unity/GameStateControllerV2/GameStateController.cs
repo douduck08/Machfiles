@@ -79,7 +79,7 @@ namespace DouduckGame {
 					isLoadingLevel = true;
 				}
 			}
-				
+
 			m_bAtStateBegin = true;
 			m_oCurrentState = oState;
 			m_oCurrentState.SetProperty(this, sSceneName);
@@ -102,7 +102,7 @@ namespace DouduckGame {
 			Debugger.Log("[GameStateController] Load Scene Async: " + sSceneName + "start");
 			m_sLoadingSceneName = sSceneName;
 			isLoadingLevel = true;
-			SingletonMono.Instance.RunCoroutine(StartLoadScene);  // A Singleton MonoBehaviour to StartCoroutine
+			SingletonMono.Instance.StartCoroutine(StartLoadScene());  // A Singleton MonoBehaviour to StartCoroutine
 		}
 
 		public IEnumerator StartLoadScene() {
