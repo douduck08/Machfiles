@@ -26,8 +26,8 @@ namespace DouduckGame {
 			m_sSceneName = sSceneName;
 		}
 
-		protected void TransTo(GameState oState, string sSceneName = "") {
-			m_GameStateController.TransTo(oState, sSceneName);
+		protected void TransTo(GameState oState, string sSceneName, bool bForceLoading = false) {
+			m_GameStateController.TransTo(oState, sSceneName, bForceLoading);
 		}
 		public virtual void StateBegin() {}
 		public virtual void StateUpdate() {}
