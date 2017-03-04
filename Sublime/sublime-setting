@@ -15,7 +15,8 @@
 		"Library",
 		"ProjectSettings",
 		"Temp",
-		"obj"
+		"obj",
+		".vs"
 	],
 	"font_face": "Courier New",
 	"font_options":
