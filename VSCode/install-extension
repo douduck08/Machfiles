@@ -1,4 +1,5 @@
 code --install-extension amlovey.shaderlabvscodefree
+code --install-extension jorgeserrano.vscode-csharp-snippets
 code --install-extension Leopotam.csharpfixformat
 code --install-extension lionize.unity-snippets-modified
 code --install-extension ms-vscode.csharp
