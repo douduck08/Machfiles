@@ -1,0 +1,27 @@
+# Unity
+/[Bb]in/
+/[Bb]uild/
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+*.meta
+
+# Visual Studio / MonoDevelop
+.vs/
+*.csproj
+*.unityproj
+*.sln
+*.user
+*.userprefs
+
+# Others
+.DS_Store*
+._*
+.Trashes
+*.[Tt][Mm][Pp]
+
+# Need include
+!*.*.meta
+
+# Custom
+/Assets/Test/

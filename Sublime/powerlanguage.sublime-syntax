@@ -3,6 +3,7 @@
 # See http://www.sublimetext.com/docs/3/syntax.html
 # Saved in ../Sublime Text 3/Packages/User
 name: PowerLanguage
+file_extensions: [pl]
 scope: source.powerlanguage
 contexts:
   main:
@@ -21,7 +22,7 @@ contexts:
       push: scope_comment
 
     # Keywords
-    - match: '\b(if|else|then|for|while|switch|case|begin|end|var)\b'
+    - match: '\b(if|else|then|for|while|switch|case|begin|end|var|Arrays)\b'
       scope: keyword.control.powerlanguage
 
     # Numbers
