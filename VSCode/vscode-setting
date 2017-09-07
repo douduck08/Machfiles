@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "extensions.ignoreRecommendations": true,
+    "editor.codeLens": false,
+    "editor.fontSize": 16
+}

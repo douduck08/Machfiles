@@ -1,0 +1,6 @@
+code --install-extension amlovey.shaderlabvscodefree
+code --install-extension Leopotam.csharpfixformat
+code --install-extension lionize.unity-snippets-modified
+code --install-extension ms-vscode.csharp
+code --install-extension Tobiah.unity-tools
+code --install-extension Unity.unity-debug
