@@ -6,8 +6,9 @@
 /[Oo]bj/
 *.meta
 
-# Visual Studio / MonoDevelop
+# VS Code / Visual Studio / MonoDevelop
 .vs/
+.vscode/
 *.csproj
 *.unityproj
 *.sln
