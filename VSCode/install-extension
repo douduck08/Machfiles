@@ -1,7 +1,17 @@
-code --install-extension amlovey.shaderlabvscodefree
+// C#
 code --install-extension jorgeserrano.vscode-csharp-snippets
 code --install-extension Leopotam.csharpfixformat
-code --install-extension lionize.unity-snippets-modified
 code --install-extension ms-vscode.csharp
+
+// Unity
+code --install-extension amlovey.shaderlabvscodefree
+code --install-extension lionize.unity-snippets-modified
 code --install-extension Tobiah.unity-tools
 code --install-extension Unity.unity-debug
+
+// C and C++
+code --install-extension ajshort.include-autocomplete
+code --install-extension formulahendry.code-runner
+code --install-extension hars.CppSnippets
+code --install-extension mitaki28.vscode-clang
+code --install-extension ms-vscode.cpptools
