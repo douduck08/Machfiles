@@ -2,6 +2,8 @@
     "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
     "extensions.ignoreRecommendations": true,
     "editor.codeLens": false,
-    "editor.fontSize": 16,
-    "files.autoSave": "onFocusChange"
+    "editor.fontSize": 14,
+    "files.autoSave": "onFocusChange",
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }
