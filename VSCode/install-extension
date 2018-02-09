@@ -5,7 +5,7 @@ code --install-extension ms-vscode.csharp
 
 // Unity
 code --install-extension amlovey.shaderlabvscodefree
-code --install-extension lionize.unity-snippets-modified
+code --install-extension kleber-swf.unity-code-snippets
 code --install-extension Tobiah.unity-tools
 code --install-extension Unity.unity-debug
 
