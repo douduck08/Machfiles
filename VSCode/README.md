@@ -6,7 +6,7 @@
 * About unity
   * Debugger for Unity
   * Unity Tools
-  * Unity Snippets Modified
+  * Unity Code Snippets
   * ShaderLabVSCode
 * C and C++
   * C/C++
@@ -14,3 +14,5 @@
   * C/C++ Clang Command Adapter
   * C/C++ Snippets
   * Include Autocomplete
+* Others
+  * Open in browser
