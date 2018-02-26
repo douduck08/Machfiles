@@ -16,3 +16,4 @@
   * Include Autocomplete
 * Others
   * Open in browser
+  * Shader languages support for VS Code
