@@ -4,7 +4,6 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
-*.meta
 
 # VS Code / Visual Studio / MonoDevelop
 .vs/
@@ -20,9 +19,6 @@
 ._*
 .Trashes
 *.[Tt][Mm][Pp]
-
-# Need include
-!*.*.meta
 
 # Custom
 /Assets/Test/
