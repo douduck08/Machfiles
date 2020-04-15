@@ -4,8 +4,9 @@
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
+/[Ll]ogs/
 
-# VS Code / Visual Studio / MonoDevelop
+# Visual Studio / MonoDevelop
 .vs/
 .vscode/
 *.csproj
