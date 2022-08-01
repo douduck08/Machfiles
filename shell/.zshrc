@@ -1,3 +1,9 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -e
+
 # =========================== #
 # PATH and Environment config #
 # =========================== #
@@ -45,6 +51,7 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 # export LANG=en_US.UTF-8
+# export ARCHFLAGS="-arch x86_64"
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
