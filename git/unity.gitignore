@@ -1,21 +1,27 @@
 # Unity
-/[Bb]in/
-/[Bb]uild/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Ll]ogs/
+/[Uu]serSettings/
+/*.unityproj
 
-# Visual Studio / MonoDevelop
-.vs/
-.vscode/
-*.csproj
-*.unityproj
-*.sln
-*.user
-*.userprefs
+# MonoDevelop
+/*.user
+/*.userprefs
+
+# Visual Studio / Visual Studio Code
+/.vs/
+/.vscode/
+/*.csproj
+/*.sln
+
+# Build dir
+/[Bb]in/
+/[Bb]uild/
 
 # Others
+Thumbs.db
 .DS_Store*
 ._*
 .Trashes

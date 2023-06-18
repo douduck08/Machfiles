@@ -1,0 +1,28 @@
+# Treat everything not text if not specified
+* -text
+
+# Unity visible meta is LF regardless of created platform
+*.meta text eol=lf
+
+# Human authored code
+*.cs         text eol=lf diff=csharp
+*.json       text eol=lf
+*.cginc      text eol=lf
+*.shader     text eol=lf
+
+# Gradle property
+*.properties text eol=lf
+
+# AndroidManifest and other XML files
+*.xml        text eol=lf
+
+# iOS plugin possible extensions
+*.h          text eol=lf
+*.c          text eol=lf
+*.cpp        text eol=lf
+*.m          text eol=lf
+*.mm         text eol=lf
+
+# GitLab and other services config
+*.yml        text eol=lf
+*.toml       text eol=lf
