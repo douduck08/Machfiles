@@ -1,5 +1,12 @@
+# Macro for all binary files that should use Git LFS.
+[attr]lfs -text filter=lfs diff=lfs merge=lfs
+
 # Treat everything not text if not specified
 * -text
+
+########
+# text #
+########
 
 # Unity visible meta is LF regardless of created platform
 *.meta text eol=lf
@@ -10,10 +17,8 @@
 *.cginc      text eol=lf
 *.shader     text eol=lf
 
-# Gradle property
+# Gradle property, Android Manifest and other XML files
 *.properties text eol=lf
-
-# AndroidManifest and other XML files
 *.xml        text eol=lf
 
 # iOS plugin possible extensions
@@ -26,3 +31,12 @@
 # GitLab and other services config
 *.yml        text eol=lf
 *.toml       text eol=lf
+
+#######
+# LFS #
+#######
+
+# Image
+*.jpg   lfs
+*.jpeg  lfs
+*.png   lfs
