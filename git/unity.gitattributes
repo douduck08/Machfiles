@@ -40,3 +40,6 @@
 *.jpg   lfs
 *.jpeg  lfs
 *.png   lfs
+
+# Font
+*.ttf   lfs
