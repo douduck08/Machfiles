@@ -1,0 +1,47 @@
+# Ignore all files by default, but trace Engine and Project directories.
+/*
+!/Engine/
+!/Vibe/
+!/Vibe.uproject
+
+# Ignore all file in Engine by default, but trace Engine's Public header files.
+/Engine/*
+!/Engine/Source/
+/Engine/Source/*
+!/Engine/Source/Runtime/
+/Engine/Source/Runtime/*
+!/Engine/Source/Runtime/Engine/
+/Engine/Source/Runtime/Engine/Classes/
+/Engine/Source/Runtime/Engine/Public/
+
+!/Engine/Plugins/
+/Engine/Plugins/*
+
+# Include specific plugins
+!/Engine/Plugins/EnhancedInput/
+!/Engine/Plugins/EnhancedInput/Source/
+!/Engine/Plugins/Runtime/CommonUI/
+!/Engine/Plugins/Runtime/CommonUI/Source/
+
+# Exclude standard Unreal Engine generated folders in Project directory
+/Vibe/Binaries/
+/Vibe/Build/
+/Vibe/DerivedDataCache/
+/Vibe/Intermediate/
+/Vibe/Saved/
+/Vibe/Content/
+
+!/Vibe/Plugins/
+/Vibe/Plugins/*/Binaries/
+/Vibe/Plugins/*/Intermediate/
+/Vibe/Plugins/*/Saved/
+/Vibe/Plugins/*/Resources/
+
+# Exclude specific file types
+*.uasset
+*.umap
+*.fbx
+*.obj
+*.png
+*.jpg
+*.mp4
