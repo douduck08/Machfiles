@@ -73,47 +73,57 @@ struct FVibeData {};
 - **UI**: Use C++ Binding mechanisms for User Widgets (`WBP`).
 
 ### Building and Verification
-- **Skill**: Use the `unreal_build` skill for all C++ compilation tasks.
-- **Workflow**: Run `build_and_analyze.py` and prioritize `analyzed_build.md` for error recovery.
+- **Build Skill**: Use `ue-build` for all C++ compilation tasks.
+- **Build Workflow**: Run `build_and_analyze.py` and prioritize `analyzed_build.md` for error recovery.
+- **Testing Skill**: Use `ue-test-pure-function` for implementing and running automated tests.
+- **Fuzzy Testing**: Implement randomized tests with seed logging and `-seed` parameter support for reproducibility.
+- **CLI Execution**: Always use `-unattended` to prevent hangs and `-NullRHI` for faster, headless execution.
 - **Manual Check**: User can launch Editor via `<ProjectName>/launch_editor.bat`.
 
 ## Workflow Orchestration
-### 1. Planning
+### 0. Session Startup (MANDATORY)
+When starting a new conversation about this project:
+1. Read `docs/todo.md` to identify in-progress tasks and their `🔄 Handoff` blocks.
+2. Read `docs/lessons.md` to load known pitfalls.
+3. For the relevant plugin(s), read their `docs/README.md`.
+
+### 1. Planning First
 - All plans require user review before execution.
 - If the implementation deviates significantly, STOP and re-plan immediately.
+- Use `ue-task-manager` skill for task tracking format and handoff protocol.
 
-### 2. Self-Improvement Loop
-- Log all user-requested corrections in `docs/lessons.md`.
-- Document rules and examples to prevent recurring errors.
-- Review `docs/lessons.md` after every fix for potential refinements.
+### 2. Task Lifecycle
+For every task, follow this sequence:
+1. **Plan**: Write the implementation plan to `docs/todo.md`.
+2. **Verify Plan**: Obtain user approval before starting.
+3. **Track**: Update checkboxes in `docs/todo.md` as steps complete.
+4. **Compile**: Recompile after every significant modification. Use `ue-build` skill.
+5. **Document**: Update plugin `docs/README.md` to reflect changes.
+6. **Capture Lessons**: Update `docs/lessons.md` after resolving issues.
 
-### 3. Compilation & Recovery
-- Recompile after every significant modification.
-- If compilation fails, resolve the error before proceeding.
-- **Root Cause Analysis**: Identify the fundamental cause of errors before modifying. Avoid trial-and-error fixes.
-- **Retry Limit**: Maximum 5 attempts per error. If unresolved, stop and report to the user.
+### 3. Self-Improvement Loop
+- Log all corrections in `docs/lessons.md`.
+- Use `ue-lesson-tracker` skill for recording format and retrieval guidelines.
+- Review lessons after every fix to prevent recurring errors.
 
-### 4. Verification
+### 4. Compilation & Recovery
+- Recompile after every significant modification. Use `ue-build` skill.
+- Identify root causes before modifying. No trial-and-error fixes.
+- Maximum 5 retry attempts per error. If unresolved, stop and report.
+
+### 5. Verification
 - No task is complete without verification.
 - Aim for "Staff Engineer" quality standards.
 - Include at least one automated validation or clear manual testing steps.
 
-### 5. Persistent Documentation
-- **Plugin Context**: Every plugin must maintain a `docs/README.md`.
-- **Content**: Continuously update this file with the plugin's architecture, core features, and implementation logic to provide persistent context for both AI and human collaborators and prevent knowledge loss.
+### 6. Persistent Documentation
+- Every plugin must maintain a `docs/README.md`.
+- Continuously update with architecture, features, and implementation logic.
+- **Relative Paths**: All file links in documentation must use relative paths.
 
-### 6. Version Control
-- **Git Commits**: When explicitly requested by the user, commit changes to the repository.
-- **Commit Message**: Every commit message must include the tag `[AI Generated]` and a concise summary of the work.
-
-## Task Management
-1. **Plan First**: Write the implementation plan to `docs/todo.md`.
-2. **Verify Plan**: Obtain user approval before starting.
-3. **Track Progress**: Update status using checkboxes in `docs/todo.md`.
-4. **Explain Changes**: Provide a high-level summary for each step.
-5. **Document Results**: Add a review section to `docs/todo.md` upon completion.
-6. **Update Persistent Docs**: Update plugin-specific `docs/README.md` to reflect new architecture/features.
-7. **Capture Lessons**: Update `docs/lessons.md` after resolving issues.
+### 7. Version Control
+- Git commits only when explicitly requested by the user.
+- Every commit message must include `[AI Generated]` and a concise summary.
 
 ## Core Principles
 - **Simplicity First**: Ensure changes are as simple as possible with minimal code impact.
