@@ -122,8 +122,8 @@ For every task, follow this sequence:
 - **Relative Paths**: All file links in documentation must use relative paths.
 
 ### 7. Version Control
-- Git commits only when explicitly requested by the user.
-- Every commit message must include `[AI Generated]` and a concise summary.
+- **Explicit Consent Only**: Git commits only when explicitly requested by the user.
+- **Commit Format**: Every commit message must include `[AI Generated]` and a concise summary.
 
 ## Core Principles
 - **Simplicity First**: Ensure changes are as simple as possible with minimal code impact.
